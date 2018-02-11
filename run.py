@@ -40,6 +40,9 @@ ENCODED_SIMONE = numpy.array([
     -0.00141306,  0.1125031 ,  0.02380354
 ])
 
+START_MESSAGE_POST_CHANNEL = 'bot_test'
+START_MESSAGE = '今から起動する(てきとう'
+
 
 @listen_to('(.*)')  # 全投稿をリッスン
 def detect_simone(message, _):
@@ -117,7 +120,14 @@ def __download_image(message):
     return image
 
 
+def __post_start_message(_bot):
+    """所定のチャンネルに起動時メッセージを投稿する
+    """
+    _bot._client.send_message(START_MESSAGE_POST_CHANNEL, START_MESSAGE)
+
+
 if __name__ == "__main__":
     print('start slackbot')
     bot = Bot()
+    __post_start_message(bot)
     bot.run()
