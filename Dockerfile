@@ -15,3 +15,6 @@ RUN pip install -r requirements.txt
 
 # source codeを仮想マシンに追加
 ADD . /usr/src/app/
+
+# docker runすると起動
+CMD ["/usr/local/bin/python", "run.py"]
