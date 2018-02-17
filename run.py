@@ -40,8 +40,8 @@ ENCODED_SIMONE = numpy.array([
     -0.00141306,  0.1125031 ,  0.02380354
 ])
 
-START_MESSAGE_POST_CHANNEL = 'bot_test'
-START_MESSAGE = '今から起動する(てきとう'
+START_MESSAGE_POST_CHANNEL = 'trans_m4'
+START_MESSAGE = 'ﾋﾟｺｯ(起動音)'
 
 
 @listen_to('(.*)')  # 全投稿をリッスン
